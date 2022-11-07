@@ -1,15 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
 
+
 function LoginScreen() {
     const [email,setemail] = useState("");
     const [password,setpassword] = useState("");
-    const [sent,setsent] = useState(false);
     
-    const handeInput = (e) => {
-
+    const handleEmail = e => {
+        setemail(e.target.value);
     }
 
+    const handlePassword = e => {
+        setpassword(e.target.value);
+    }
+
+    
     return (
         <div className='MainContainer'>
             <div className='LoginContainer'>
