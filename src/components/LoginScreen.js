@@ -19,7 +19,7 @@ function LoginScreen({setisLogged, isLogged}) {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log("User logged in: " + user)
+            console.log("User logged in")
             setisLogged(true);
         })
         .catch((error) => {

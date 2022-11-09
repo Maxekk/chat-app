@@ -44,7 +44,7 @@ input {
 }
 
 a {
-  margin-left: 24%;
+  margin-left: 0%;
   color: rgb(155, 171, 243);
 }
 
@@ -59,7 +59,7 @@ h1{
   background-color: #5567b0;
   border: none;
   font-size: 35px;
-  margin-left: 10%;
+  margin-left: 0%;
   margin-top: 50px;
   transition: 0.4s;
 }
@@ -70,7 +70,7 @@ h1{
   background-color: #63babd;
   border: none;
   font-size: 35px;
-  margin-left: 10%;
+  margin-left: 0%;
   margin-top: 50px;
   transition: 0.4s;
 }
@@ -102,5 +102,53 @@ h1{
   width: 100%;
   height: 100%;
   background-color: #252835;
+}
+
+.NavabarContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5%;
+  background-color: #2f3242;
+}
+
+.LogoutButton {
+  align-self: end;
+  margin-right: 0%;
+  width: 100px;
+  height: 100%;
+  background-color: #5567b0;
+  transition: 0.4s;
+  border: none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.LogoutButton:hover {
+  margin-right: 0%;
+  width: 100px;
+  height: 100%;
+  background-color: #63babd;
+  border: none;
+  transition: 0.4s;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Logo {
+  font-size: 35px;
+  margin-left: 2%;
+  width: 400px;
+}
+
+h3 {
+  width: 300px;
+  margin-top: -1%;
+}
+
+.ButtonFormatter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
