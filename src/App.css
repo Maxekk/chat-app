@@ -152,3 +152,44 @@ h3 {
   flex-direction: column;
 }
 
+.MessagesContainer {
+  background-color: #191b23;
+  width: 100%;
+  height: 88%;
+}
+.SendMessageContainer {
+  height: 6.8%;
+  display: flex;
+
+}
+
+.SendMessageInput {
+  width: 94%;
+  height: 100%;
+  border: none;
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.SendMessageBtn {
+  width: 6%;
+  margin-top: 0%;
+  height: 100%;
+  background-color: #5567b0;
+  transition: 0.4s;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+}
+
+.SendMessageBtn:hover {
+  width: 6%;
+  margin-top: 0%;
+  height: 100%;
+  background-color: #63babd;
+  transition: 0.4s;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+}
+

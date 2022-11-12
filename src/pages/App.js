@@ -1,9 +1,9 @@
-import './App.css';
-import LoginScreen from './components/LoginScreen';
-import RegisterScreen from './components/RegisterScreen';
-import Chat from './components/Chat';
+import '../App.css';
+import LoginScreen from './LoginScreen';
+import RegisterScreen from './RegisterScreen';
+import Chat from './Chat';
 import { useState } from 'react';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
 
 function App() {
   const [isLogged,setisLogged] = useState(false);
