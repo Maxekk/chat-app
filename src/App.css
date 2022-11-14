@@ -46,6 +46,13 @@ input {
 a {
   margin-left: 0%;
   color: rgb(155, 171, 243);
+  transition: 0.4s;
+}
+
+a:hover {
+  margin-left: 0%;
+  color: rgb(199, 207, 240);
+  transition: 0.4s;
 }
 
 h1{
@@ -157,10 +164,10 @@ h3 {
   width: 100%;
   height: 88%;
 }
+
 .SendMessageContainer {
   height: 6.8%;
   display: flex;
-
 }
 
 .SendMessageInput {
@@ -191,5 +198,45 @@ h3 {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
+}
+
+.MessagesContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.msg {
+  display: flex;
+  padding: 20px 10px 0 20px;
+  margin: 20px;
+  border-radius: 3000px;
+  align-items: center;
+  flex-direction: row;
+  text-overflow: clip;
+  overflow: hidden;
+  justify-content: center;
+  max-width: inherit;
+}
+
+.sent {
+  background-color: #395dff;
+  color: white;
+  border-top-right-radius: 1000px;
+  flex-direction: row-reverse;
+  padding: 20px 20px 0 10px;
+  text-align: end;
+  float: right;
+  max-width: 10%;
+  justify-content: center;
+}
+
+.received {
+  border: 1px solid lightgray;
+  background-color: #FAFAFA;
+  border-top-left-radius: 1000px;
+  float: left;
+  color: black;
+  max-width: 10%;
+  justify-content: center;
 }
 

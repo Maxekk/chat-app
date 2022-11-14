@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { database } from '../firebase';
+import { auth, db } from '../firebase';
 import { doc, setDoc, Timestamp  } from "firebase/firestore"; 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -10,19 +10,13 @@ function SendMessage() {
     }
 
     const sendMessage = async () => {
-        await setDoc(doc(database, "messages", uuidv4()), {
+        await setDoc(doc(db, "messages", uuidv4()), {
             content: message,
             createdAt: Timestamp.now(),
-            uid: uuidv4()
+            uid: auth.currentUser.uid,
           });
         setmessage("");
     }
-
-    useEffect(() => {
-      return (database.collection('posts').orderBy("createdAt").limit(10).onSnapshot((snapshot) => {
-        snapshot.forEach((doc) =>console.log(doc.data()));
-      }));
-    }, []);
 
   return (
     <div className='SendMessageContainer'>
