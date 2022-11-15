@@ -3,12 +3,11 @@ import { auth, db } from '../firebase';
 import { doc, setDoc, Timestamp  } from "firebase/firestore"; 
 import { v4 as uuidv4, v4 } from 'uuid'
 import Logo from '../components/Logo'
-import { getStorage, ref , uploadBytesResumable} from "firebase/storage";
+import { getStorage, ref , uploadBytes} from "firebase/storage";
 import storage from '../firebase';
 
 function SendMessage() {
     const [message,setmessage] = useState("");
-    const [file,setfile] = useState(null);
 
     const handleInputChange = (e) => {
         setmessage(e.target.value);
@@ -23,30 +22,36 @@ function SendMessage() {
         setmessage("");
     }
 
-    const handleUpload = (e) => {
-      setfile(e.target.files[0]);
+    const handleUpload = async (e) => {
+      const file = e.target.files[0];
+      console.log(file)
       if(file == null) return
       else {
         const storage = getStorage();
         const fileref = ref(storage, `/images/${auth.currentUser.uid + "-" + uuidv4()}`);
-        const upload = uploadBytesResumable(fileref, file);
+        const upload = await uploadBytes(fileref, file);
         console.log("uploaded")
-        setfile(null);
       }
     }
 
   return (
     <div className='SendMessageContainer'>
-        <input 
+        <input
         type='text' 
         className='SendMessageInput' 
         onChange={handleInputChange}
-        value={message}></input>
+        value={message}>
+        </input>
         <label class="label">
-          <input type="file" className='Upload' onChange={handleUpload} files={file}/>
-            <span>
-              <Logo />
-            </span>
+        <input 
+        type="file" 
+        className='Upload' 
+        onChange={handleUpload} 
+        multiple 
+        />
+        <span>
+            <Logo />
+        </span>
         </label>
         <button className='SendMessageBtn' onClick={sendMessage}>Send</button>
     </div>
