@@ -258,14 +258,33 @@ h3 {
   align-self: end;
 }
 
-.UploadBtn {
+.Upload {
   background-color: #373b4d;
   border: none;
   transition: 0.4s;
+  height: 100%;
+  width: 10%;
 }
 
 .UploadBtn:hover {
   background-color: #525874;
   border: none;
+  transition: 0.4s;
+}
+
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+  border: none;
+}
+.label {
+  cursor: pointer;
+  background: #373b4d;
+  display: inline-block;
+  border: none;
+  transition: 0.4s;
+}
+.label:hover {
+  background: #5cbd95;
   transition: 0.4s;
 }
