@@ -212,6 +212,7 @@ h3 {
   border-radius: 3000px;
   align-items: center;
   flex-direction: row;
+  color: black;
   text-overflow: clip;
   overflow: hidden;
   justify-content: center;
@@ -219,7 +220,7 @@ h3 {
 }
 
 .sent {
-  background-color: #395dff;
+  background-color: #16235c;
   color: white;
   border-top-right-radius: 1000px;
   flex-direction: row-reverse;
@@ -227,16 +228,44 @@ h3 {
   text-align: end;
   float: right;
   max-width: 10%;
+  align-items: left;
   justify-content: center;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .received {
   border: 1px solid lightgray;
-  background-color: #FAFAFA;
+  background-color: #2e313f;
+  border: none;
   border-top-left-radius: 1000px;
+  align-items: left;
   float: left;
   color: black;
   max-width: 10%;
   justify-content: center;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.niggea {
+  margin-bottom: 2vh;
+}
+
+.uploadImage {
+  width: 50px;
+  height: 50px;
+  align-self: end;
+}
+
+.UploadBtn {
+  background-color: #373b4d;
+  border: none;
+  transition: 0.4s;
+}
+
+.UploadBtn:hover {
+  background-color: #525874;
+  border: none;
+  transition: 0.4s;
+}
