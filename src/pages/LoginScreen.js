@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
 
-function LoginScreen({setisLogged, isLogged}) {
+function LoginScreen({setisLogged, isLogged, setregisterSetter}) {
     const [email,setemail] = useState("");
     const [password,setpassword] = useState("");
     
@@ -13,6 +13,10 @@ function LoginScreen({setisLogged, isLogged}) {
 
     const handlePassword = e => {
         setpassword(e.target.value);
+    }
+
+    const register = () => {
+        setregisterSetter(true);
     }
 
     const login = () => {
@@ -39,7 +43,7 @@ function LoginScreen({setisLogged, isLogged}) {
                 <br></br>
                 <button className='LoginButton' onClick={login}>Login</button>
                 <br></br>
-                <h1><a href='X'>Dont have an account?</a></h1>
+                <h1><a onClick={register}>Dont have an account?</a></h1>
             </div>
         </div>
     )

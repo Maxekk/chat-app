@@ -2,7 +2,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyCTecrRoU_4oRAHsTHvWk-2V2aaiMsRuC4",
     authDomain: "chat-app-17edb.firebaseapp.com",
@@ -15,7 +14,6 @@ const firebaseConfig = {
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-  // Use these for db & auth
   const database = firebaseApp.firestore();
   const auth = firebase.auth();
   

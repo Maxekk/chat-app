@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 
 function App() {
   const [isLogged,setisLogged] = useState(false);
+  const [registerSetter, setregisterSetter] = useState(false);
   
   if(isLogged){
     return(
@@ -14,9 +15,14 @@ function App() {
     )
   }
   else{
-    return(
-      <LoginScreen setisLogged={setisLogged} isLogged={isLogged} />
-    )
+    if(registerSetter){
+      return <RegisterScreen setregisterSetter={setregisterSetter}/>
+    }
+    else {
+      return(
+        <LoginScreen setisLogged={setisLogged} setregisterSetter={setregisterSetter}/>
+      )
+    }
   }
 
 }

@@ -4,6 +4,7 @@ import Messages from '../components/Messages';
 import SendMessage from '../components/SendMessage';
 
 function Chat({ isLogged,setisLogged }) {
+  
   return (
     <div className='MainContainer'>
       <div className='ChatContainer'>
