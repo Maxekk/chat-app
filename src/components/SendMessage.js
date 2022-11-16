@@ -3,12 +3,11 @@ import { auth, db } from '../firebase';
 import { doc, setDoc, Timestamp  } from "firebase/firestore"; 
 import { v4 as uuidv4, v4 } from 'uuid'
 import Logo from '../components/Logo'
-import { getStorage, ref , uploadBytes} from "firebase/storage";
+import { getStorage, ref , uploadBytes, getDownloadURL} from "firebase/storage";
 import storage from '../firebase';
 
 function SendMessage() {
     const [message,setmessage] = useState("");
-
     const handleInputChange = (e) => {
         setmessage(e.target.value);
     }
@@ -18,6 +17,7 @@ function SendMessage() {
             content: message,
             createdAt: Timestamp.now(),
             uid: auth.currentUser.uid,
+            isImage: false,
           });
         setmessage("");
     }
@@ -31,6 +31,17 @@ function SendMessage() {
         const fileref = ref(storage, `/images/${auth.currentUser.uid + "-" + uuidv4()}`);
         const upload = await uploadBytes(fileref, file);
         console.log("uploaded")
+      
+        await getDownloadURL(fileref)
+        .then(url => {
+            setDoc(doc(db, "messages", uuidv4()), {
+            content: url,
+            createdAt: Timestamp.now(),
+            uid: auth.currentUser.uid,
+            isImage: true,
+          });
+        setmessage("");
+        })
       }
     }
 

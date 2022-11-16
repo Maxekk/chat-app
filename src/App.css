@@ -248,7 +248,7 @@ h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.niggea {
+.nigga {
   margin-bottom: 2vh;
 }
 
@@ -287,4 +287,39 @@ label.label input[type="file"] {
 .label:hover {
   background: #5cbd95;
   transition: 0.4s;
+}
+
+
+.ImageMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.sentImg {
+  width: 270px;
+  height: 170px;
+  background-color: #16235c;
+  border-radius: 10%;
+  align-self: end;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+
+.receivedImg {
+  width: 270px;
+  height: 170px;
+  background-color: #2e313f;
+  border-radius: 10%;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+img {
+  border-radius: 5%;
 }
