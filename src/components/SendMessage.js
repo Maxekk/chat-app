@@ -6,7 +6,7 @@ import Logo from '../components/Logo'
 import { getStorage, ref , uploadBytes, getDownloadURL} from "firebase/storage";
 import storage from '../firebase';
 
-function SendMessage() {
+function SendMessage({dummy}) {
     const [message,setmessage] = useState("");
     const handleInputChange = (e) => {
         setmessage(e.target.value);
@@ -20,6 +20,7 @@ function SendMessage() {
             isImage: false,
           });
         setmessage("");
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     const handleUpload = async (e) => {
@@ -41,6 +42,7 @@ function SendMessage() {
             isImage: true,
           });
         setmessage("");
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
         })
       }
     }

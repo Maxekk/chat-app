@@ -163,6 +163,7 @@ h3 {
   background-color: #191b23;
   width: 100%;
   height: 88%;
+  overflow-y: scroll;
 }
 
 .SendMessageContainer {

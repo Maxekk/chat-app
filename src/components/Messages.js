@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { db } from '../firebase';
 import ChatMessage from './ChatMessage';
 import ImageMessage from './ImageMessage';
+import { useRef } from 'react';
 
-function Messages() {
+function Messages({dummy}) {
   const [messages,setmessages] = useState([]);
 
   useEffect(() => {
@@ -25,7 +26,9 @@ function Messages() {
             <ChatMessage content={content} uid={uid} createdAt={createdAt}/>
           )
         }
+        
       })}
+      <span ref={dummy}></span>
     </div>
   )
 }
