@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase'
+import { db } from '../firebase';
+import { doc, setDoc } from "firebase/firestore"; 
+import { v4 as uuidv4, v4 } from 'uuid'
 
 function RegisterScreen({setregisterSetter}) {
     const [username,setusername] = useState("");
@@ -31,11 +34,16 @@ function RegisterScreen({setregisterSetter}) {
     const createUser = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-        const user = userCredential.user;
+            const user = userCredential.user;
+            setDoc(doc(db, "users", uuidv4()), {
+                uid: user.uid,
+                username: username,
+            });
+            console.log("User created")
         })
         .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+            const errorCode = error.code;
+            const errorMessage = error.message;
         });
     }
 

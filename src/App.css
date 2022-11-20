@@ -362,6 +362,7 @@ label.label input[type="file"] {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  margin-left: 1vh;
 }
 
 img {
