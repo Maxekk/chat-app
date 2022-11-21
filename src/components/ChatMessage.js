@@ -5,6 +5,7 @@ function ChatMessage({content, uid, createdAt, username}) {
   return (
     <div>
         <div key={uid} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
+            <div className='username'>{username}:</div>
             <div className='nigga'>{content}</div>
         </div>
     </div>

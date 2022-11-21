@@ -36,7 +36,7 @@ function RegisterScreen({setregisterSetter}) {
         .then((userCredential) => {
             const user = userCredential.user;
             setDoc(doc(db, "users", uuidv4()), {
-                uid: user.uid,
+                uidu: user.uid,
                 username: username,
             });
             console.log("User created")

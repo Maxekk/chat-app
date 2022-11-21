@@ -254,7 +254,7 @@ h3 {
   margin: 20px;
   border-radius: 3000px;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   color: black;
   text-overflow: clip;
   overflow: hidden;
@@ -266,7 +266,7 @@ h3 {
   background-color: #16235c;
   color: white;
   border-top-right-radius: 1000px;
-  flex-direction: row-reverse;
+  flex-direction: column;
   padding: 20px 20px 0 10px;
   text-align: end;
   float: right;
@@ -372,4 +372,8 @@ img {
 
 .profileImage {
   margin-top: 0%;
+}
+
+.username {
+  color: grey;
 }
