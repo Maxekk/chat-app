@@ -1,10 +1,11 @@
 import React from 'react'
 import { auth } from '../firebase';
 
-function ImageMessage({content, uid}) {
+function ImageMessage({content, uid, username}) {
   return (
     <div className={`ImageMessage ${uid === auth.currentUser.uid ? 'sentImg' : 'receivedImg'}`}>
-        <img src={content} width="250px" height="150px"></img>
+       <div className={`username ${uid === auth.currentUser.uid ? 'usernamesent' : 'usernamereceived'}`}>{username}:</div>
+        <img src={content} width="250px" height="150px" className='image'></img>
     </div>
   )
 }

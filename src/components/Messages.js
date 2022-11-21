@@ -22,7 +22,12 @@ function Messages({dummy}) {
       {messages.map(({content, createdAt, uid, isImage}) => {
           if(isImage) {
             return(
-              <ImageMessage content={content} uid={uid} />
+              <ImageMessage content={content} uid={uid} username={
+                usernames.map(({uidu, username}) => {
+                  if(uid == uidu){
+                    return(username);
+                  }
+                })}/>
             )
           }
           else {

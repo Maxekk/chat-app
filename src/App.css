@@ -339,29 +339,30 @@ label.label input[type="file"] {
   align-items: center;
   justify-content: center;
   border: none;
+  background-color: transparent;
 }
 
 .sentImg {
   width: 270px;
   height: 170px;
-  background-color: #16235c;
+  background-color: transparent;
   border-radius: 10%;
   align-self: end;
   align-items: center;
   justify-content: center;
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 
 
 .receivedImg {
   width: 270px;
   height: 170px;
-  background-color: #2e313f;
+  background-color: transparent;
   border-radius: 10%;
   align-self: flex-start;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-left: 1vh;
 }
 
@@ -374,6 +375,14 @@ img {
   margin-top: 0%;
 }
 
-.username {
-  color: grey;
+.usernamesent{
+  color: rgb(168, 167, 167);
+}
+
+.usernamereceived {
+  color: rgb(146, 145, 145);
+}
+
+.image {
+  border-bottom: 20px;
 }
