@@ -37,9 +37,9 @@ function LoginScreen({setisLogged, isLogged, setregisterSetter}) {
         <div className='MainContainer'>
             <div className='LoginContainer'>
                 <p>Email</p>
-                <input type="text" onChange={handleEmail}></input>
+                <input type="text" onChange={handleEmail} className="AccountInput"></input>
                 <p>Password</p>
-                <input type="text" onChange={handlePassword}></input>
+                <input type="text" onChange={handlePassword} className="AccountInput"></input>
                 <br></br>
                 <button className='LoginButton' onClick={login}>Login</button>
                 <br></br>
