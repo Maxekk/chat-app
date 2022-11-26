@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
 import ChatMessage from './ChatMessage';
 import ImageMessage from './ImageMessage';
 import { useRef } from 'react';
@@ -7,6 +7,7 @@ import { useRef } from 'react';
 function Messages({dummy}) {
   const [messages,setmessages] = useState([]);
   const [usernames,setusernames] = useState([]);
+
   useEffect(() => {
     db.collection("messages").orderBy("createdAt").limit(50).onSnapshot(snapshot => {
       setmessages(snapshot.docs.map(doc => doc.data()))
@@ -17,6 +18,20 @@ function Messages({dummy}) {
     })
   }, [])
 
+ const getProfilePic = (id) => {
+    db.collection("users").where("uidu", "==", id)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          console.log(doc.data().profileULR)
+        });
+        
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+  }
+  
   return (
     <div className='MessagesContainer'>
       {messages.map(({content, createdAt, uid, isImage}) => {
@@ -27,7 +42,8 @@ function Messages({dummy}) {
                   if(uid == uidu){
                     return(username);
                   }
-                })}/>
+                })}
+                />
             )
           }
           else {
