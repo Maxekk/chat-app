@@ -21,7 +21,6 @@ function YourProfile({setprofileComp}) {
         querySnapshot.forEach((doc) => {
             setimgsource(doc.data().profileULR)
             setdocId(doc.id)
-            console.log(doc.data())
         });
     })
     .catch((error) => {
@@ -37,7 +36,6 @@ function YourProfile({setprofileComp}) {
       const storage = getStorage();
       const fileref = ref(storage, `/images/${uuidv4()}`);
       const upload = await uploadBytes(fileref, file);
-      console.log("uploaded")
     
       getDownloadURL(fileref)
       .then(url => {

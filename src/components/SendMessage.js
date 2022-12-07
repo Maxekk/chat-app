@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { auth, db } from '../firebase';
 import { doc, setDoc, Timestamp  } from "firebase/firestore"; 
 import { v4 as uuidv4, v4 } from 'uuid'
-import Logo from '../components/Logo'
+import ImgFileIcon from './ImgFileIcon'
 import { getStorage, ref , uploadBytes, getDownloadURL} from "firebase/storage";
 import storage from '../firebase';
+import SendArrowIcon from './SendArrowIcon'
 
 function SendMessage({dummy}) {
     const [message,setmessage] = useState("");
@@ -21,6 +22,12 @@ function SendMessage({dummy}) {
           });
         setmessage("");
         dummy.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const sendMessageOnPress = (e) => {
+      if (e.key === "Enter") {
+        sendMessage();
+    }
     }
 
     const handleUpload = async (e) => {
@@ -53,20 +60,23 @@ function SendMessage({dummy}) {
         type='text' 
         className='SendMessageInput' 
         onChange={handleInputChange}
-        value={message}>
+        value={message}
+        onKeyPress={sendMessageOnPress}>
         </input>
+
         <label class="label">
-        <input 
-        type="file" 
-        className='Upload' 
-        onChange={handleUpload} 
-        multiple 
-        />
-        <span>
-            <Logo />
-        </span>
+          <input 
+          type="file" 
+          className='Upload' 
+          onChange={handleUpload} 
+          multiple 
+          />
+          <span><ImgFileIcon /></span>
         </label>
-        <button className='SendMessageBtn' onClick={sendMessage}>Send</button>
+        
+        <button className='SendMessageBtn' onClick={sendMessage}>
+          <SendArrowIcon />
+        </button>
     </div>
   )
 }

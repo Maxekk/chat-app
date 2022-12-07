@@ -6,31 +6,17 @@ import { useRef } from 'react';
 
 function Messages({dummy}) {
   const [messages,setmessages] = useState([]);
-  const [usernames,setusernames] = useState([]);
-
+  const [users,setusers] = useState([]);
   useEffect(() => {
     db.collection("messages").orderBy("createdAt").limit(50).onSnapshot(snapshot => {
       setmessages(snapshot.docs.map(doc => doc.data()))
     })
 
     db.collection("users").limit(10).onSnapshot(snapshot => {
-      setusernames(snapshot.docs.map(doc => doc.data()));
+      setusers(snapshot.docs.map(doc => doc.data()));
     })
+    
   }, [])
-
- const getProfilePic = (id) => {
-    db.collection("users").where("uidu", "==", id)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(doc.data().profileULR)
-        });
-        
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-  }
   
   return (
     <div className='MessagesContainer'>
@@ -38,7 +24,7 @@ function Messages({dummy}) {
           if(isImage) {
             return(
               <ImageMessage content={content} uid={uid} username={
-                usernames.map(({uidu, username}) => {
+                users.map(({uidu, username, profileULR}) => {
                   if(uid == uidu){
                     return(username);
                   }
@@ -48,13 +34,14 @@ function Messages({dummy}) {
           }
           else {
             return(
-              <ChatMessage content={content} uid={uid} createdAt={createdAt} username={
-                usernames.map(({uidu, username}) => {
+              <ChatMessage content={content} uid={uid} createdAt={createdAt} users={users} username={
+                users.map(({uidu, username}) => {
                   if(uid == uidu){
                     return(username);
                   }
                 })
-              } />
+              }
+              />
             )
           }
       })}	

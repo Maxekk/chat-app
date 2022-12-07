@@ -33,13 +33,19 @@ function LoginScreen({setisLogged, isLogged, setregisterSetter}) {
         });
     }
 
+    const loginOnPress = (e) => {
+        if (e.key === "Enter") {
+            login();
+        }
+    }
+
     return (
-        <div className='MainContainer'>
+        <div className='MainContainer' onKeyPress={loginOnPress}>
             <div className='LoginContainer'>
                 <p>Email</p>
                 <input type="text" onChange={handleEmail} className="AccountInput"></input>
                 <p>Password</p>
-                <input type="text" onChange={handlePassword} className="AccountInput"></input>
+                <input type="password" onChange={handlePassword} className="AccountInput"></input>
                 <br></br>
                 <button className='LoginButton' onClick={login}>Login</button>
                 <br></br>

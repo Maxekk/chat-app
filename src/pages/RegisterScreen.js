@@ -33,6 +33,12 @@ function RegisterScreen({setregisterSetter}) {
         setregisterSetter(false);
     }
 
+    const registerOnPress = (e) => {
+        if (e.key === "Enter") {
+            createUser();
+        }
+    }
+
     const createUser = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -47,6 +53,7 @@ function RegisterScreen({setregisterSetter}) {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            console.log(errorCode,errorMessage)
         });
     }
 
@@ -67,18 +74,17 @@ function RegisterScreen({setregisterSetter}) {
         }
       }
   
-
     return (
-        <div className='MainContainer'>
-            <div className='LoginContainer'>
+        <div className='MainContainer' onKeyPress={registerOnPress}>
+            <div className='LoginContainer' onKeyPress={registerOnPress}>
                 <p>Username</p>
-                <input type="text" onChange={handleUsername} className="AccountInput"></input>
+                <input type="text" onChange={handleUsername} className="AccountInput" onKeyPress={registerOnPress}></input>
                 <p>Email</p>
-                <input type="text" onChange={handleEmail} className="AccountInput"></input>
+                <input type="text" onChange={handleEmail} className="AccountInput" onKeyPress={registerOnPress}></input>
                 <p>Password</p>
-                <input type="text" onChange={handlePassword} className="AccountInput"></input>
-                <input type="file" className='UploadProfilePicReg' onChange={handleUpload} multiple ></input>
-                <button className='RegisterButton' onClick={createUser}>Register</button>
+                <input type="password" onChange={handlePassword} className="AccountInput" onKeyPress={registerOnPress}></input>
+                <input type="file" className='UploadProfilePicReg' onChange={handleUpload} multiple onKeyPress={registerOnPress}></input>
+                <button className='RegisterButton' onClick={createUser} onKeyPress={registerOnPress}>Register</button>
                 <h1><a onClick={login}>Sign in</a></h1>
             </div>
         </div>
