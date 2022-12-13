@@ -15,7 +15,6 @@ function ChatMessage({content, uid, username, users}) {
             }
           })
         }
-        
         </div>
     </div>
   )

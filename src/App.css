@@ -160,7 +160,7 @@ h1{
 
 .ProfileButton {
   align-self: end;
-  margin-right: 0%;
+  margin-right: 0vw;
   width: 5%;
   height: 100%;
   background-color: #2f3242;
@@ -173,7 +173,7 @@ h1{
 
 .ProfileButton:hover {
   align-self: end;
-  margin-right: 0%;
+  margin-right: 0vw;
   width: 5%;
   height: 100%;
   background-color: #4a5070;
@@ -274,6 +274,7 @@ h3 {
   flex-direction: row;
   padding: 20px 20px 0 10px;
   text-align: end;
+  gap: 10px;
   float: right;
   max-width: inherit;
   align-items: left;
@@ -462,5 +463,61 @@ p {
 }
 
 .MsgContent{
-  width: 10vw;
+  width: inherit;
+  max-width: 20vw;
 }
+
+@media screen and (max-width: 1400px) {
+  .ProfileButton {
+    align-self: end;
+    margin-right: 2vw;
+    width: 5%;
+    height: 100%;
+    background-color: #2f3242;
+    transition: 0.4s;
+    border: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.4s;
+  }
+  
+  .ProfileButton:hover {
+    align-self: end;
+    margin-right: 2vw;
+    width: 5%;
+    height: 100%;
+    background-color: #4a5070;
+    transition: 0.4s;
+    border: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .ProfileButton {
+    align-self: end;
+    margin-right: 3vw;
+    width: 5%;
+    height: 100%;
+    background-color: #2f3242;
+    transition: 0.4s;
+    border: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.4s;
+  }
+  
+  .ProfileButton:hover {
+    align-self: end;
+    margin-right: 3vw;
+    width: 5%;
+    height: 100%;
+    background-color: #4a5070;
+    transition: 0.4s;
+    border: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+
