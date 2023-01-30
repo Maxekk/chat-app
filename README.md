@@ -6,7 +6,7 @@ Quick Start:
 ------------
 
 - ``` git clone ```
-- ``` cd chat-app```
+- ```cd chat-app```
 - Paste your firebase config to firebase.js file
 - ``` npm install ```
 - ``` npm start ```
