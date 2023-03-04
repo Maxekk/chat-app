@@ -2,8 +2,6 @@
 A real time web application written in React with FireBase, where users can share the messages between each other.
 App supports text messages and images.
 
-Preview: http://35.228.233.43:3001
-
 Quick Start:
 ------------
 
