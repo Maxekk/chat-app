@@ -24,7 +24,7 @@ function Navbar({ setisLogged, setprofileComp }) {
         <button className="LogoutButton" onClick={logOut}>
           Log Out
         </button>
-        <CgProfile className="profileImage" setprofileComp={setprofileComp} />
+        <CgProfile className="profileImage" setprofileComp={setprofileComp} onClick={() => setprofileComp(true)}/>
       </div>
     </div>
   );
