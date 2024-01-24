@@ -26,3 +26,11 @@ service cloud.firestore {
   }
 }
 ```
+
+
+Preview:
+------------
+![preview](images/loginscreen.png)
+![preview](images/mainscreen.png)
+
+
